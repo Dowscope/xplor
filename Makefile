@@ -1,11 +1,11 @@
-VERSION = c++20
-INPUT_FILES = main.cpp
-OUTPUT_FILE = game.run
+CFLAGS = -std=c++20 -O2
+LDFLAGS = -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi
 
-LIBS = -lSDL2 -lSDL2main -lstdc++
+Xplor: main.cpp
+	g++ $(CFLAGS) -o Xplor main.cpp $(LDFLAGS)
 
-main:
-	gcc -std=$(VERSION) $(INPUT_FILES) -o $(OUTPUT_FILE) $(LIBS)
+test: Xplor
+	./Xplor
 
-clear:
-	rm game.run
+clean:
+	rm -f Xplor
