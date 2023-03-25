@@ -8,6 +8,9 @@ Xplor::Xplor()
 Xplor::~Xplor()
 {
     std::cout << "Shutting down XPLOR... " << std::endl;
+    
+    delete _mainScreen;
+
     std::cout << "XPLOR shut down successfully" << std::endl;
 }
 
@@ -15,7 +18,6 @@ void Xplor::run()
 {
     _init();
     _mainLoop();
-    _cleanup();
 }
 
 void Xplor::_init()
@@ -26,9 +28,7 @@ void Xplor::_init()
 
 void Xplor::_mainLoop()
 {
-}
-
-void Xplor::_cleanup()
-{
-    delete _mainScreen;
+    while(!_mainScreen->shouldWindowClose()){
+        _mainScreen->pollEvents();
+    }
 }

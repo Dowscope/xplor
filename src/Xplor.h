@@ -12,7 +12,6 @@ private:
     Screen* _mainScreen;
     void _init();
     void _mainLoop();
-    void _cleanup();
 public:
     Xplor();
     ~Xplor();

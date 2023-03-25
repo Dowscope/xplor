@@ -9,12 +9,20 @@
 class Screen
 {
 private:
-    GLFWWindow* _mainWindow;
+    GLFWwindow* _mainWindow;
+    VkInstance* _mainInstance;
+    
     void _initWindow();
     void _initVulkan();
+    void _createInstance();
 public:
+    const int width = 800;
+    const int height = 600;
     Screen();
     ~Screen();
+
+    bool shouldWindowClose();
+    void pollEvents();
 };
 
 #endif
