@@ -5,19 +5,20 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include <vector>
 
 class Screen
 {
 private:
     GLFWwindow* _mainWindow;
-    VkInstance* _mainInstance;
-    
+    VkInstance _instance;
+
     void _initWindow();
     void _initVulkan();
     void _createInstance();
 public:
-    const int width = 800;
-    const int height = 600;
+    const uint32_t width = 800;
+    const uint32_t height = 600;
     Screen();
     ~Screen();
 
