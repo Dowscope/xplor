@@ -11,3 +11,6 @@ test: Xplor
 
 clean:
 	rm -f Xplor
+
+debug:
+	g++  -g $(CFLAGS) -o Xplor $(FILES) $(LDFLAGS)
